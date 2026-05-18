@@ -159,7 +159,7 @@ This project demonstrates:
 - File handling
 - Data visualization
 
-Author : Zulfina , Alua , Inkar 2502DS
+Authors : Zulfina , Alua , Inkar 2502DS
 
 Student project: Smart City Analytics System
 Language: Python
