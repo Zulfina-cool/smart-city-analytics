@@ -27,7 +27,7 @@ Technologies Used
 - Python
 - Tkinter
 - Matplotlib
-- NumPy
+- NumPy (data analysis : mean value , max and min values)
 - Object-Oriented Programming
 - File handling
 
@@ -108,6 +108,32 @@ The project includes:
 - line chart showing trends over years
 - bar charts for district comparison
 - pie chart for infrastructure distribution
+
+## Screenshots
+
+### Welcome Window
+![Welcome](welcome.jpg)
+
+### Main Menu
+![Main Menu](main.default.jpg)
+
+### Filters Mode
+![Filters](main.filters.jpg)
+
+### Analysis Mode
+![Analysis Mode](main.analysis.jpg)
+
+### District Details (Medeu)
+![District Details](details.medeu.jpg)
+
+### Dashboard
+![Dashboard](dashboard.jpg)
+
+### Graphs
+![Graphs](graphs.jpg)
+
+### Table View
+![Table](table.jpg)
 
 File Output
 
