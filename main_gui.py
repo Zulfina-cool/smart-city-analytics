@@ -1,30 +1,28 @@
+#библиотеки Trinter -gui
+# графики с библиотекой Matplotlib
 import tkinter as tk
-from tkinter import ttk
+from tkinter import ttk #таблицы и улучшения 
 import analytics
 import matplotlib.pyplot as plt
 from database import districts
 
-# =========================================================
-# COLORS
-# =========================================================
-BG = "#dfe7ef"
-CARD = "#f7f9fc"
+# COLORS HEX - 16 
+BG = "#dfe7ef" #пример HEX цвета это фон 
+CARD = "#f7f9fc" #ffff максимум цвета это белый #000 черный 
 ACCENT = "#4ea8de"
 GREEN = "#52b788"
 BTN_BORDER = "#2b2d42"
-
-# =========================================================
+#fg foreground text color
 # DETAILS WINDOW
-# =========================================================
 def open_details(district):
 
-    win = tk.Toplevel()
+    win = tk.Toplevel() #новое окно отдельное
 
     win.title(district["name"])
     win.geometry("340x280")
     win.configure(bg=BG)
 
-    card = tk.Frame(
+    card = tk.Frame( #граппировка элементов интерфейса
         win,
         bg=CARD,
         bd=1,
@@ -38,7 +36,7 @@ def open_details(district):
         expand=True
     )
 
-    tk.Label(
+    tk.Label( #текст 
         card,
         text=district["name"],
         font=("Arial", 12, "bold"),
@@ -81,9 +79,7 @@ def open_details(district):
     ).pack(pady=10)
 
 
-# =========================================================
 # TABLE WINDOW
-# =========================================================
 def open_table():
 
     win = tk.Toplevel()
@@ -170,9 +166,7 @@ def open_table():
     ).pack(pady=5)
 
 
-# =========================================================
-# GRAPHICS
-# =========================================================
+# GRAPHICS графики - здесь визуал
 def show_graphs():
 
     names = [d["name"] for d in districts]
@@ -186,10 +180,8 @@ def show_graphs():
     traffic_trend = [7.8, 6.2, 6.8, 7.2, 7.6, 8.0, 8.3, 8.5]
     infra_trend = [5.5, 6.0, 6.5, 6.9, 7.3, 7.6, 7.9, 8.2]
 
-    # =====================================================
     # MAIN FIGURE
-    # =====================================================
-    fig = plt.figure(figsize=(13, 8))
+    fig = plt.figure(figsize=(13, 8)) #гравное окно графиков
 
     fig.patch.set_facecolor("#cfd8e3")
 
@@ -200,12 +192,11 @@ def show_graphs():
         color="#1d3557"
     )
 
-    # =====================================================
-    # GRAPH 1
-    # =====================================================
-    ax1 = plt.subplot(2, 2, 1)
+    # GRAPH 1 
+    #subplot размещение графиков в однои окнн 
+    ax1 = plt.subplot(2, 2, 1) #размещение графиков сеткой (2 строки и 2 столбца и й граыие по позиции)
 
-    ax1.set_facecolor("#eef2f7")
+    ax1.set_facecolor("#eef2f7") # меняет фон графика
 
     plt.plot(
         years,
@@ -245,9 +236,9 @@ def show_graphs():
 
     plt.grid(alpha=0.3)
 
-    # =====================================================
+
     # GRAPH 2
-    # =====================================================
+
     ax2 = plt.subplot(2, 2, 2)
 
     ax2.set_facecolor("#eef2f7")
@@ -292,9 +283,8 @@ def show_graphs():
 
     plt.xticks(rotation=45)
 
-    # =====================================================
+
     # GRAPH 3
-    # =====================================================
     ax3 = plt.subplot(2, 2, 3)
 
     ax3.set_facecolor("#eef2f7")
@@ -336,9 +326,7 @@ def show_graphs():
 
     plt.xticks(rotation=45)
 
-    # =====================================================
     # GRAPH 4
-    # =====================================================
     ax4 = plt.subplot(2, 2, 4)
 
     ax4.set_facecolor("#eef2f7")
@@ -379,9 +367,7 @@ def show_graphs():
     plt.show()
 
 
-# =========================================================
 # LIST + SEARCH + FILTER + MODE
-# =========================================================
 def show_all():
 
     listbox.delete(0, tk.END)
@@ -507,9 +493,7 @@ def set_mode():
             )
 
 
-# =========================================================
 # DASHBOARD
-# =========================================================
 def open_dashboard():
 
     win = tk.Toplevel()
@@ -581,9 +565,7 @@ def open_dashboard():
     ).pack(pady=10)
 
 
-# =========================================================
 # MAIN UI
-# =========================================================
 def open_main():
 
     welcome.destroy()
@@ -773,10 +755,7 @@ def open_main():
         command=main.destroy
     ).pack(pady=15)
 
-
-# =========================================================
 # WELCOME WINDOW
-# =========================================================
 welcome = tk.Tk()
 
 welcome.title("Welcome")
@@ -830,4 +809,4 @@ tk.Button(
     command=open_main
 ).pack(pady=18)
 
-welcome.mainloop()
+welcome.mainloop() # mainloop запуск цикла работы интерфейса
