@@ -2,25 +2,25 @@
 import numpy as np
 from database import districts
 
-# ---------------- AIR QUALITY ----------------
+#  AIR QUALITY 
 def get_air_stats():
     values = np.array([d["air_quality"] for d in districts])
     return np.mean(values), np.max(values), np.min(values)
 
 
-# ---------------- TRAFFIC ----------------
+# TRAFFIC 
 def get_traffic_stats():
     values = np.array([d["traffic"] for d in districts])
     return np.mean(values), np.max(values), np.min(values)
 
 
-# ---------------- INFRASTRUCTURE ----------------
+# INFRASTRUCTURE 
 def get_infra_stats():
     values = np.array([d["infrastructure"] for d in districts])
     return np.mean(values), np.max(values), np.min(values)
 
 
-# ---------------- BEST DISTRICT ----------------
+# BEST DISTRICT 
 def best_air_district():
     values = np.array([d["air_quality"] for d in districts])
     idx = np.argmax(values)
